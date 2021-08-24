@@ -1,0 +1,51 @@
+﻿id,City/municipality,Name of cohouse,Address,"
+started living",Tenure originally,Tenure today,type,Owner originally,Owner today,Type of house owner,Number of flats
+1,Borås,Tunnan,Tunnlandsgatan 9,1987,tenancy,tenancy,multi,AB Bostäder i Borås,AB Bostäder i Borås,municipality owned public housing company,27
+2,Falun,Tersen,Tegelvägen 18,2005,cooperative tenancy,cooperative tenancy,over 40,KHR Tersen,KHR Tersen,cooperative,50
+3,Gävle,Blomstret,Batterigatan 14-18,,condominium,condominium,multi,HSB/Brf Blomstret,HSB/Brf Blomstret,condominium,39
+4,Göteborg,Majbacken Bogemenskap,Hellstedtsgatan 7,2004,cooperative tenancy,cooperative tenancy,over 40,Familjebostäder i Göteborg AB,Familjebostäder i Göteborg AB,municipality owned public housing company,31
+5,Göteborg,Stacken,Teleskopgatan 2,1980,tenancy,cooperative tenancy,multi,Bostads AB Poseidon,KHR Stacken,cooperative,35
+6,Göteborg,Undersammatak,Riksdalersgatan 8A/B,2020,tenancy,tenancy,multi,Trollängen,Trollängen,private housing company,59
+7,Göteborg,Trädet,Allhelgonagatan 12,1985,tenancy,tenancy,multi,Bostads AB Poseidon,Bostads AB Poseidon,municipality owned public housing company,39
+8,Hamburgssund,Hogslätts vänboende,Övre Hogslättsvägen 14 I,2018,cooperative tenancy,cooperative tenancy,over 40,KHR Hogslätts vänboende,KHR Hogslätts vänboende,cooperative,12
+9,Helsingborg,Bostadskooperativet Fortuna,Tågagatan 35-37,1989,cooperative tenancy,cooperative tenancy,multi,AB Helsingborgshem,AB Helsingborgshem,municipality owned public housing company,20
+10,Huddinge,Fullersta Backe,Kyrkängsbacken 8,1986,tenancy,tenancy,multi,Huge FastigheterAB,Huge FastigheterAB,municipality owned public housing company,26
+11,Hudiksvall,Kopparslagaren,,2016,condominium,condominium,multi,brf Kopparslagaren,brf Kopparslagaren,condominium,5
+12,Linköping,Stolplyckan,Föreningsgatan 35-39,1979,tenancy,tenancy,multi,Stångåstaden,Stångåstaden,municipality owned public housing company,135
+13,Lund,Fiolen,Flygelvägen 6,1992,tenancy,tenancy,multi,Lunds Kommuns Fastighets AB,Lunds Kommuns Fastighets AB,municipality owned public housing company,24
+14,Lund,Regnbågen,Sunnanvägen 235-237,1989,tenancy,tenancy,multi,Lunds Kommuns Fastighets AB,Lunds Kommuns Fastighets AB,municipality owned public housing company,20
+15,Lund,Russinet,Karl XII-gatan 11,1999,cooperative tenancy,cooperative tenancy,over 40,Lunds Kommuns Fastighets AB,Lunds Kommuns Fastighets AB,municipality owned public housing company,27
+16,Lund,Slottet,Prennegatan 8,1984,condominium,condominium,multi,Brf Slottet,Brf Slottet,condominium,16
+17,Malmö,BoAktiv Landgången,Sadelmakarebyn 6C,2008,cooperative tenancy,cooperative tenancy,multi,,Hyreshem Malmö,private housing company,40
+18,Malmö,Sofielunds kollektivhus,Sofielundsvägen 71,2014,cooperative tenancy,cooperative tenancy,multi,Malmös Kommunala Bostadsbolag,Malmös Kommunala Bostadsbolag,municipality owned public housing company,45
+19,Mölndal,Kornet,Utsädesgatan 7,2006,cooperative tenancy,cooperative tenancy,no kids,Mölndalsbostader AB,Mölndalsbostader AB,municipality owned public housing company,44
+20,Norrtälje,Solhem,"Gåsviksvägen 67, Älmsta",2006,cooperative tenancy,cooperative tenancy,multi,Förenade Solhem KHR,Förenade Solhem KHR,cooperative,27
+21,Stockholm,Cigarrlådan,"Tobaksvägen 22-26, Farsta",1986,tenancy,tenancy,multi,AB Stockholmshem,AB Stockholmshem,municipality owned public housing company,22
+22,Stockholm,Dunderbacken,"Hägerstensvägen 237 C, Hägersten",2010,cooperative tenancy,cooperative tenancy,over 40,Familjebostäder AB,Familjebostäder AB,municipality owned public housing company,61
+23,Stockholm,Ekbo,"Gebersvägen 24-26, Sköndal",1998,condominium,condominium,multi,Brf Konditorn nr 316 i Stockholm,Brf Konditorn nr 316 i Stockholm,condominium,32
+24,Stockholm,Elfvinggården,"Lyckovägen 9, Bromma",1940,tenancy,tenancy,women,Systrarna Elfvings stiftelse,Systrarna Elfvings stiftelse,foundation or trust,300
+25,Stockholm,Elsa Beskow,"Elsa Beskows gata 9-23, Hägersten",1985,tenancy,tenancy,multi,AB Stockholmhem,AB Stockholmshem,municipality owned public housing company,120
+26,Stockholm,Fristad,"Cervins väg 17-31, Spånga",1983,tenancy,tenancy,multi,AB SvenskaBostäder ,AB SvenskaBostäder ,municipality owned public housing company,135
+27,Stockholm,Färdknäppen,Fatbursgatan 29 A,1993,tenancy,tenancy,over 40,Familjebostäder AB,Familjebostäder AB,municipality owned public housing company,43
+28,Stockholm,Hässelby Familjehotell,"Ormängsgatan 61 E, Hässelby",1955,tenancy,tenancy,multi,Olle Engqvist,Wonna I de Jong Fastigheter,private housing company,300
+29,Stockholm,Kupan,"Solberga Ängsväg 15-19, Älvsjö",1986,condominium,condominium,multi,HSB/Brf Kupan,HSB/Brf Kupan,condominium,52
+30,Stockholm,Prästgårdshagen,"Armborstvägen 2, Älvsjö",1984,tenancy,tenancy,multi,Familjebostäder AB,Familjebostäder AB,municipality owned public housing company,32
+31,Stockholm,Rio,Sandhamnsgatan 10,1983,tenancy,tenancy,multi,AB SvenskaBostäder ,AB SvenskaBostäder ,municipality owned public housing company,111
+32,Stockholm,Sjöfarten,Heliosgatan 23,2008,cooperative tenancy,cooperative tenancy,multi,Familjebostäder AB,Familjebostäder AB,municipality owned public housing company,46
+33,Stockholm,Sockenstugan,"Statsrådsvägen 9, Skarpnäck",1989,tenancy,tenancy,over 40,Familjebostäder AB,Familjebostäder AB,municipality owned public housing company,44
+34,Stockholm,Södra Station,Magnus Ladulåsgatan 15-21,1987,tenancy,condominium,multi,AB SvenskaBostäder,Brf Södra Station,condominium,63
+35,Stockholm,Trekanten,Lövholmsvägen 19-21,1986,tenancy,condominium,multi,AB SvenskaBostäder,Brf Trekanten,condominium,78
+36,Stockholm,Tre Portar,"Skarpnäcks allé 20, Skarpnäck",1986,tenancy,tenancy,multi,AB Stockholmshem,AB Stockholmshem,municipality owned public housing company,52
+37,Stockholm,Tullstugan,Dörjgränd 4-6,1993,tenancy,condominium,multi,Familjebostäder AB,Brf Tullstugan,condominium,24
+38,Stockholm,Utkiken,Folkungagatan 150-154,1982,tenancy,tenancy,multi,AB SvenskaBostäder ,AB SvenskaBostäder ,municipality owned public housing company,9
+39,Simrishamn,Hambo,"Skolgatan 20 A, Hammenhög",2019,cooperative tenancy,cooperative tenancy,over 40,Hammenhög Bogemenskap KHR,Hammenhög Bogemenskap KHR,cooperative,14
+40,Södertälje,Lergöken,Porslinsvägen 6,1980,tenancy,tenancy,multi,Telge Bostäder AB,Telge Bostäder AB,municipality owned public housing company,26
+41,Trosa,Lagnö Bo,Lotsängsvägen 1,2018,cooperative tenancy,cooperative tenancy,multi,Lagnö Bo KHR,Lagnö Bo KHR,cooperative,19
+42,Trosa,Lagnö Gård,Lagnö gård,1981,condominium,condominium,multi,Brf Lagnö Gård,Brf Lagnö Gård,condominium,7
+43,Uppsala,Blenda,Repslagaregatan 5,1983,tenancy,tenancy,multi,Uppsalahem AB,Uppsalahem AB,municipality owned public housing company,24
+44,Värmdö,Ängviksgården,Ängsviksvägen 10,1986,condominium,condominium,multi,Brf Ängsviksgården,Brf Ängsviksgården,condominium,14
+45,Växjö,Sämjan ,Valhallagatan 34,1976,cooperative tenancy,cooperative tenancy,multi,private owner,private owner,private person,1
+46,Växjö,Slånbäret,Lillestadsvägen 79,1988,tenancy,condominium,multi,brf Slånbäret,brf Slånbäret,condominium,34
+47,Örebro,Påängen,Mejramsvägen 101-105,1994,condominium,condominium,multi,Riksbyggen/brf Sörbyängen Centrum,Riksbyggen/brf Sörbyängen Centrum,condominium,86
+48,Örebro,Vildsvinet,Ladugatan 14,1992,tenancy,tenancy,multi,Örebrobostäder AB,Örebrobostäder AB,municipality owned public housing company,60
+49,Landskrona,Yxan,Öresundsgatan 25,1983,tenancy,tenancy,multi,Landskronahem AB,Landskronahem AB,municipality owned public housing company,20

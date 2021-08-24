@@ -1,0 +1,8 @@
+/venv
+__pycache__/
+session-file
+
+data/output/*.csv
+data/output/*.sqlite3
+data/output/*.json
+data/output/*.xlsx
