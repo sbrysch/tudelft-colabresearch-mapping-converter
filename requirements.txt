@@ -5,3 +5,5 @@ pytz==2021.1
 six==1.15.0
 tabulate==0.8.9
 sqlalchemy==1.4.19
+python-slugify==5.0.2
+text-unidecode==1.3
