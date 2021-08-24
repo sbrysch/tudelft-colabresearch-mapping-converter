@@ -23,6 +23,14 @@ The converted data can then be displayed by the [mapping webapp](https://mapping
 
 
 
+## Initialization
+
+Install the dependencies:
+
+    pip install -r requirements.txt
+
+
+
 ## Usage
 
 1. Prepare the [countries source files](./data/input):
