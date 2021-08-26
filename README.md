@@ -1,6 +1,6 @@
 # TUDelft Co-Lab Research Mapping Converter
 
-This is a tool to convert housing data collected from multiple sources into the format developed by the Co-Lab Research team of [TU Delft](https://www.tudelft.nl/en/) (Delft University of Technology).  
+This is a tool to convert housing data collected from multiple sources into the format developed by the [Co-Lab Research](https://co-lab-research.net/) team of [Delft University of Technology](https://www.tudelft.nl/en/).  
 The converted data can then be displayed by the [mapping webapp](https://mapping.co-lab-research.net/).
 
 
@@ -33,50 +33,62 @@ Install the dependencies:
 
 ## Usage
 
-1. Prepare the [countries source files](./data/input):
 
-   - **Sweden**
-  
-     1. Open the ``Database CH Sweden 2020.xlsx`` file.
-     2. Format the file:
-        1. Remove empty rows that are not at the end of the dataset.
-        2. Remove all sum rows.
-        3. In the cells A1 write `id`.
-        4. Complete cells with missing values for `City`: a value is often written to a single cell but its reach to multiple cells implied by the borders.
-        5. Search and replace: `condiminium` -> `condominium`
-        6. Fix invalid values (e.g.: question mark in year value).
-     3. Save the formatted file to ``./data/input/Database CH Sweden 2020 - formatted.xlsx``
-     4. Save the _Database CH Sweden 2020_ sheet as `./data/input/sweden-projects-completed.csv` (CSV UTF-8).
-     5. Save the _Groups planning new houses_ sheet as `./data/input/sweden-projects-wip.csv` (CSV UTF-8).
+### A. Country source files
 
-    - **Denmark**
+The [countries source files](./data/input) of this repository are already prepared according to the following process:
 
-      1. Open `Database CH Denmark 2019.xlsx` file.
-      2. Format the file:
-        1. Remove empty column in the middle of the dataset.
-        2. Remove all line breaks in cells.
-        3. Remove leading spaces in the cells of `Type of ownership` column.
-      3. Save the formatted file to ``./data/input/Database CH Denmark 2019 - formatted.xlsx``
-      4. Save again as `./data/input/denmark-projects.csv` (CSV UTF-8).
+- **Sweden**
 
-    - **England**
+    1. Open the ``Database CH Sweden 2020.xlsx`` file.
+    2. Format the file:
+    1. Remove empty rows that are not at the end of the dataset.
+    2. Remove all sum rows.
+    3. In the cells A1 write `id`.
+    4. Complete cells with missing values for `City`: a value is often written to a single cell but its reach to multiple cells implied by the borders.
+    5. Search and replace: `condiminium` -> `condominium`
+    6. Fix invalid values (e.g.: question mark in year value).
+    3. Save the formatted file to ``./data/input/Database CH Sweden 2020 - formatted.xlsx``
+    4. Save the _Database CH Sweden 2020_ sheet as `./data/input/sweden-projects-completed.csv` (CSV UTF-8).
+    5. Save the _Groups planning new houses_ sheet as `./data/input/sweden-projects-wip.csv` (CSV UTF-8).
 
-      1. Open `ENGLAND CLT project data-2020-11-18-10-51-57.xlsx` file.
-      2. Format the file:
-         1. Remove the first row containing meta titles.
-         2. Remove the sum and footer rows.
-      3. Save the formatted file to `./data/input/ENGLAND CLT project data-2020-11-18-10-51-57 - formatted.xlsx`
-      4. Save again as `./data/input/england-projects.csv`
+- **Denmark**
 
-2. Edit the [classification source files](./classification).
-3. Run `python converter.py`.
-4. The output files are created in [./data/output](./data/output):
+    1. Open `Database CH Denmark 2019.xlsx` file.
+    2. Format the file:
+    1. Remove empty column in the middle of the dataset.
+    2. Remove all line breaks in cells.
+    3. Remove leading spaces in the cells of `Type of ownership` column.
+    3. Save the formatted file to ``./data/input/Database CH Denmark 2019 - formatted.xlsx``
+    4. Save again as `./data/input/denmark-projects.csv` (CSV UTF-8).
+
+- **England**
+
+    1. Open `ENGLAND CLT project data-2020-11-18-10-51-57.xlsx` file.
+    2. Format the file:
+        1. Remove the first row containing meta titles.
+        2. Remove the sum and footer rows.
+    3. Save the formatted file to `./data/input/ENGLAND CLT project data-2020-11-18-10-51-57 - formatted.xlsx`
+    4. Save again as `./data/input/england-projects.csv`
+
+
+### B. Classifications
+
+All the classification data (taxonomy, definitions, countries descriptions) can be modified by editing the [classification source files](./classification).
+
+
+### C. Run the converter
+
+After any modification of the source or the classification files, the converter must be executed:
+
+1. Run `python converter.py`.
+2. The output files are created in [./data/output](./data/output):
    - `yyyy-mm-dd-hh-mm-ss_aggregated_data.csv`
    - `yyyy-mm-dd-hh-mm-ss_aggregated_data.json`
    - `classification.json`
    - `taxonomy.json`
    - `taxonomy-structured.json`
-5. Use of the results:
+3. Use of the results:
    - JSON files can be pushed to the [tudelft-colabresearch-mapping-data](https://github.com/odqo/tudelft-colabresearch-mapping-data) repository (see the related readme).
    - `./data/output/co-lab-research-db.sqlite3` can be open with an adapted SQLite client.
    - We can also use _Excel_ to see and work with the data of the `yyyy-mm-dd-hh-mm-ss_aggregated_data.csv` file:
