@@ -1,7 +1,7 @@
 import csv
 import re
-import datetime
 import json
+from datetime import datetime
 
 from slugify import slugify
 
@@ -11,10 +11,10 @@ from tabulate import tabulate
 
 from hierarchical_taxonomy import HierarchicalTaxonomy
 
-from source_processing.denmark import process_dk
-from source_processing.sweden_completed import process_se_completed
-from source_processing.sweden_wip import process_se_wip
-from source_processing.united_kingdom_england import process_uk_england
+from source_processing.custom.denmark import process_dk
+from source_processing.custom.sweden_completed import process_se_completed
+from source_processing.custom.sweden_wip import process_se_wip
+from source_processing.custom.united_kingdom_england import process_uk_england
 
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
@@ -23,13 +23,14 @@ from sqlalchemy.orm import sessionmaker
 from base import Base
 
 from db_definitions import *
+from source_processing.normal import process_normal_source
 
-def load_source_csv_file(path):
+def load_source_csv_file(path, delimiter='|'):
   with open(path, encoding="utf8") as csvfile:
-    return list(csv.reader(csvfile))[1:]
+    return list(csv.reader(csvfile, delimiter=delimiter))[1:]
 
 
-# Create database
+# 1. Create database
 print('\n\n-> Generating database...\n')
 
 db_path = 'data/output/co-lab-research-db.sqlite3'
@@ -89,10 +90,41 @@ for table, c_class in classifications.items():
   print(f'{table} table created')
 
 
+# Load sources to db
 
+for s in load_source_csv_file(f'./data/input/sources.csv'):
+  entry = Source()
+  entry.date = datetime.strptime(s[0], '%Y-%m-%d')
+  entry.country_code = s[1]
+  entry.name = s[2]
+  entry.description = s[3]
+  entry.link = s[4]
+  session.add(entry)
+
+session.commit()
+print('sources table created')
+
+
+
+# 2. Generating classification files (json)
 print()
 print('\n-> Generating classification files...')
 print()
+
+
+def export_object_to_json(object, destination, name):
+  print(f'Exporting {name}...')
+  entries = session.query(object).all()
+  entries_serialized = []
+  for e in entries:
+    entries_serialized.append(e.serialized())
+
+  filepath = destination
+  sourceFile = open(filepath, 'w')
+  print(json.dumps(entries_serialized), file=sourceFile)
+  sourceFile.close()
+
+  print(f'Exported to {filepath}\n')
 
 
 def taxonomy_gen_str_entries(id = False):
@@ -116,6 +148,7 @@ def taxonomy_gen_str_entries(id = False):
   return entry
 
 
+# Structured taxonomy
 print('Exporting structured taxonomy...')
 tdb = session.query(Taxonomy).limit(1)[0]
 
@@ -129,25 +162,13 @@ sourceFile.close()
 
 print(f'Exported to {filepath}\n')
 
+# Taxonomy
+export_object_to_json(Taxonomy, './data/output/taxonomy.json', 'taxonomy')
 
-print('Exporting taxonomy...')
-entries = session.query(Taxonomy).all()
-entries_serialized = []
-for e in entries:
-  entries_serialized.append(e.serialized())
-
-filepath = f'./data/output/taxonomy.json'
-sourceFile = open(filepath, 'w')
-print(json.dumps(entries_serialized), file=sourceFile)
-sourceFile.close()
-
-print(f'Exported to {filepath}\n')
-
-
+# Combined classification
 print('Exporting combined classifications...')
 
 filepath = f'./data/output/classifications.json'
-
 temp_object = {}
 
 for name, c_class in classifications.items():
@@ -160,36 +181,67 @@ sourceFile.close()
 
 print(f'Exported to {filepath}\n')
 
+# Sources
+export_object_to_json(Source, './data/output/sources.json', 'sources')
 
-# Import and process data
+
+
+# 3. Import and process data
 print('\n-> Processing data...\n')
 projects = []
 
-# Import Sweden - completed
-data = load_source_csv_file('./data/input/sweden-projects-completed.csv')
-source_name = 'Database CH Sweden 2020.xlsx'
-projects += process_se_completed(data, source_name)
+# 3.1 custom imports
 
-# Import Sweden - wip
-data = load_source_csv_file('./data/input/sweden-projects-wip.csv')
-source_name = 'Database CH Sweden 2020.xlsx'
-projects += process_se_wip(data, source_name)
+custom_sources = [
+  [
+    'sweden-projects-completed.csv',
+    'process_se_completed',
+    1,
+  ],
+  [
+    'sweden-projects-wip.csv',
+    'process_se_wip',
+    1,
+  ],
+  [
+    'denmark-projects.csv',
+    'process_dk',
+    2,
+    2019
+  ],
+  [
+    'england-projects.csv',
+    'process_uk_england',
+    3,
+  ],
+]
+
+for cs in custom_sources:
+  data = load_source_csv_file(f'./data/input/custom/{cs[0]}')
+  if len(cs) > 3:
+    projects += locals()[cs[1]](data, cs[2], cs[3])
+  else:
+    projects += locals()[cs[1]](data, cs[2])
+
+total_projects_custom = len(projects)
+print(f'[Total processed projects from custom sources: {total_projects_custom}]\n')
+
+# 3.2 normal imports
+
+sources = session.query(Source).all()
+for s in sources[len(custom_sources) - 1:]:
+  source = session.query(Source).where(Source.id == s.id).first()
+  data = load_source_csv_file(f'./data/input/normal/{s.id}.csv', ',')
+  projects += process_normal_source(data, source)
+
+total_projects_normal = len(projects) - total_projects_custom
+print(f'[Total processed projects from normal sources: {total_projects_normal}]\n')
+
+print(f'[Overall processed projects: {len(projects)}]\n')
 
 
-# Import Denemark
-data = load_source_csv_file('./data/input/denmark-projects.csv')
-source_name = 'Database CH Denmark 2019.xlsx'
-projects += process_dk(data, source_name, source_year = 2019)
-
-# Import England
-data = load_source_csv_file('./data/input/england-projects.csv')
-source_name = 'ENGLAND CLT project data-2020-11-18-10-51-57.xlsx'
-projects += process_uk_england(data, source_name)
-
-print(f'[Total processed projects: {len(projects)}]')
-
-# Export to DB
-print('\n\n-> Saving projects to database...\n')
+# Save to DB
+print('\n-> Saving projects to database...\n')
 for p in projects:
   p.add_to_db(session)
 
@@ -197,23 +249,19 @@ session.commit()
 session.close()
 print(f'Saved to: ./{db_path}')
 
-# Exportin projets
-print('\n\n-> Exporting projects to files...\n')
+# Save projets to files
+print('\n\n-> Importing projects to files...\n')
 
 # to CSV
-time = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-filepath = f'./data/output/{time}_aggregated_data.csv'
-
+filepath = './data/output/aggregated_data.csv'
 df = pd.DataFrame([t.to_dict() for t in projects])
 df.to_csv(filepath, index=False, encoding='utf-16',sep='|')
-print(f'Exported to: {filepath}')
-
+print(f'Imported to: {filepath}')
 
 # to JSON
-filepath = f'./data/output/{time}_aggregated_data.json'
+filepath = './data/output/aggregated_data.json'
 df.to_json(filepath, orient='records')
-
-print(f'Exported to: {filepath}')
+print(f'Imported to: {filepath}')
 
 
 print('\n\nDone\n')

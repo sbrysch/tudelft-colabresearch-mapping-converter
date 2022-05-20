@@ -4,7 +4,7 @@ from project import Project
 from project_address import ProjectAddress
 
 
-def process_dk(data, source_name, source_year):
+def process_dk(data, source_id, source_year):
   '''Process list of projects from Denmark
   '''
   print('Processing Denmark...')
@@ -16,10 +16,10 @@ def process_dk(data, source_name, source_year):
       # format name
       name = re.sub("\((.*)", '', ip[0]) # remove anything in ()
       name = re.sub("\"", '', name) # remove all "
-      project = Project(name, source_name)
+      project = Project(name, source_id)
 
       # address
-      project.address = ProjectAddress('Denmark', 'DK')
+      project.address = ProjectAddress('DK')
       asplit = re.split(",", ip[5])
       project.address.line1 = asplit[0] # Adresse
       if len(asplit) > 1:

@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Text, ForeignKey
+from sqlalchemy import Column, Integer, String, Text, Date, ForeignKey
 from sqlalchemy.orm import relationship
 from base import Base
 
@@ -87,13 +87,13 @@ class dbProject(Base):
   address_line1 = Column(String)
   address_region = Column(String)
   address_code = Column(String)
-  address_country = Column(String)
   address_country_code = Column(String)
 
-  legal_forms = relationship('PrjLegalAssoc')
+  legal_forms  = relationship('PrjLegalAssoc')
   housing_tenures = relationship('PrjHousingAssoc')
 
-  source = Column('source', String)
+  source_id = Column(Integer, ForeignKey('sources.id'))
+  source = relationship("Source")
 
 
 class PrjLegalAssoc(Base):
@@ -112,10 +112,9 @@ class PrjHousingAssoc(Base):
 class Taxonomy(Base):
   __tablename__ = 'taxonomy'
 
-  id = Column(Integer, ForeignKey('projects.id'), primary_key=True, autoincrement=True)
+  id = Column(Integer, primary_key=True, autoincrement=True)
   parent_id = Column(Integer, nullable=True)
   country = Column(String, nullable=True)
-
   name = Column(String)
   slug = Column(String)
   definition = Column(Text, nullable=True)
@@ -124,11 +123,33 @@ class Taxonomy(Base):
     return self.__dict__[field]
 
   def serialized(self):
-      return {
-        'id': self.id,
-        'slug': self.slug,
-        'parent_id': self.parent_id,
-        'country': self.country,
-        'name': self.name,
-        'definition': self.definition
-      }
+    return {
+      'id': self.id,
+      'slug': self.slug,
+      'parent_id': self.parent_id,
+      'country': self.country,
+      'name': self.name,
+      'definition': self.definition
+    }
+
+
+class Source(Base):
+  __tablename__ = 'sources'
+
+  id = Column(Integer, primary_key=True, autoincrement=True)
+  date = Column(Date)
+  country_code = Column(String)
+  name = Column(String)
+  description = Column(Text, nullable=True)
+  link = Column(String, nullable=True)
+
+  def __getitem__(self, field):
+    return self.__dict__[field]
+
+  def serialized(self):
+    return {
+      'id': self.id,
+      'name': self.name,
+      'description': self.description,
+      'link': self.link,
+    }

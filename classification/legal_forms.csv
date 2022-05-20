@@ -1,8 +1,8 @@
-﻿Slug,Name,Description
-association,Association,"non-profit organisation formed by a group of people that share a common interest. Decisions are made by these members, on a one person- one vote basis. Any profit must be reinvested and cannot be shared with members."
-cooperative,Cooperative,a special form of an association that sometimes can share profit between its members. Often follows the cooperative principles.
-foundation,Foundation/Trust,a non-profit organisation without members but with a board.
-clt,Community Land Trust,"a non-profit, community-based organisation that owns land and/or dwellings and aims at permanently affordable levels for long-term community benefit."
-clg,Company Limited by Guarantee,"A CLG offers its members limited liability, as the outside world deals with the company as a separate entity and not the Company Members on an individual basis. Should the company fail, the governing documents state how much the members are personally liable for."
-cbs,Community Benefit Society,"a charitable or non-charitable organisation which conducts an industry, business or trade for the benefit of the community"
-rs,Registered Society,
+﻿Slug|Name|Description
+association|Association|"non-profit organisation formed by a group of people that share a common interest. Decisions are made by these members, on a one person- one vote basis. Any profit must be reinvested and cannot be shared with members."
+cooperative|Cooperative|a special form of an association that sometimes can share profit between its members. Often follows the cooperative principles.
+foundation|Foundation/Trust|a non-profit organisation without members but with a board.
+clt|Community Land Trust|"a non-profit, community-based organisation that owns land and/or dwellings and aims at permanently affordable levels for long-term community benefit."
+clg|Company Limited by Guarantee|"A CLG offers its members limited liability, as the outside world deals with the company as a separate entity and not the Company Members on an individual basis. Should the company fail, the governing documents state how much the members are personally liable for."
+cbs|Community Benefit Society|"a charitable or non-charitable organisation which conducts an industry, business or trade for the benefit of the community"
+rs|Registered Society|

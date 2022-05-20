@@ -1,3 +1,3 @@
-Slug,Name,Description
-active,Active,"when the residents are living in the housing complex, even if final construction works are still incomplete."
-developing,Developing,"when the housing project is being developed (including formation of the group, project conception, development and construction /renovation)."
+Slug|Name|Description
+active|Active|"when the residents are living in the housing complex, even if final construction works are still incomplete."
+developing|Developing|"when the housing project is being developed (including formation of the group, project conception, development and construction /renovation)."

@@ -4,17 +4,17 @@ from project import Project
 from project_address import ProjectAddress
 
 
-def process_se_completed(data, source_name):
+def process_se_completed(data, source_id):
   '''Process list of completed projects from Sweden
   '''
   print('Processing Sweden (completed projects)...')
   projects = []
 
   for ip in data:
-    project = Project(ip[2], source_name)
+    project = Project(ip[2], source_id)
 
     # Address
-    project.address = ProjectAddress('Sweden', 'SE')
+    project.address = ProjectAddress('SE')
     project.address.region = ip[1] # City/municipality
     project.address.line1 = ip[3] # Address
 

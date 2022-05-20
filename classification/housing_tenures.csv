@@ -1,10 +1,10 @@
-﻿Slug,Name,Description
-ownership_co,Co-ownership,households together own (the organisation that owns) the project
-ownership_full,Full ownership,households own the dwelling  in which they live.
-ownership_shares,Ownership of shares,households own shares in (the organisation that owns) the project.
-rental_cooperative,Cooperative rental,"household pays rent to the cooperative of renters, while the housing can be either owned by the same cooperative, a municipal company or private provider."
-rental_private,Private unregulated rental,households pay rent to private companies or individuals.
-rental_private_regulated,Private regulated rental,households pay a rent that is set by the government (to guarantee affordability) to private companies or individuals.
-rental_public,Public rental,household pays rent to an organisation partly owned by the state.
-rental_social,Social rental,household pays affordable rent to non-profit organisations
-user_right,Right of/to use,households are granted the right to use the dwelling for a set period of time.
+﻿Slug|Name|Description
+ownership_co|Co-ownership|households together own (the organisation that owns) the project
+ownership_full|Full ownership|households own the dwelling  in which they live.
+ownership_shares|Ownership of shares|households own shares in (the organisation that owns) the project.
+rental_cooperative|Cooperative rental|"household pays rent to the cooperative of renters, while the housing can be either owned by the same cooperative| a municipal company or private provider."
+rental_private|Private unregulated rental|households pay rent to private companies or individuals.
+rental_private_regulated|Private regulated rental|households pay a rent that is set by the government (to guarantee affordability) to private companies or individuals.
+rental_public|Public rental|household pays rent to an organisation partly owned by the state.
+rental_social|Social rental|household pays affordable rent to non-profit organisations
+user_right|Right of/to use|households are granted the right to use the dwelling for a set period of time.

@@ -5,7 +5,7 @@ from project_address import ProjectAddress
 from utils.utils import get_integer
 
 
-def process_uk_england(data, source_name):
+def process_uk_england(data, source_id):
   '''Process list of projects from England
   '''
   print('Processing England...')
@@ -16,10 +16,10 @@ def process_uk_england(data, source_name):
     if ip[0]:
       # create a name as none exists
       name = f'{ip[0]}-{ip[8]}'
-      project = Project(name, source_name)
+      project = Project(name, source_id)
 
       # address
-      project.address = ProjectAddress('United Kingdom', 'GB')
+      project.address = ProjectAddress('GB')
       project.address.code = ip[9] # Project Postcode Area
 
       project.dwellings_number = ip[12] # Total number of homes

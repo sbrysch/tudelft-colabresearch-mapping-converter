@@ -1,4 +1,4 @@
-﻿Slug,Name,Description
-ownership,Ownership,form of land tenure where individuals own the land on which they live
-lease,Lease,contract outlining the terms under which one party agrees to rent the land owned by another party.
-use_right,Right of use,form of land tenure where individuals are granted the right to use the housing in which they live over the life of a lease.
+﻿Slug|Name|Description
+ownership|Ownership|form of land tenure where individuals own the land on which they live
+lease|Lease|contract outlining the terms under which one party agrees to rent the land owned by another party.
+use_right|Right of use|form of land tenure where individuals are granted the right to use the housing in which they live over the life of a lease.

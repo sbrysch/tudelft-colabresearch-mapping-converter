@@ -5,14 +5,14 @@ from base import Base
 
 
 class Project:
-  def __init__(self, name, source):
+  def __init__(self, name, source_id):
     self.name = name
-    self.source = source
     self.geolocation = None
     self.completion_year = None
     self.dwellings_number = None
     self.housing_tenure = None
     self.legal_form = None
+    self.source_id = source_id
 
   def add_housing_tenure(self, value):
     if self.housing_tenure == None:
@@ -27,7 +27,6 @@ class Project:
     else:
       if value not in self.legal_form:
         self.legal_form.append(value)
-
 
   # address
   @property
@@ -144,25 +143,30 @@ class Project:
       self._dwellings_number = value
 
 
+  # # source
+  # @property
+  # def source(self):
+  #   return self._source
+
+
   def __str__(self):
     return f'Project: {self.name}'
 
 
   # For Pandas dataset and csv export
   def to_dict(self):
-      return {
-        'name': self.name,
-        'development_stage': self.development_stage,
-        'completion_year': self.completion_year,
-        'address': self.address,
-        'address_country': self.address.country,  # Required for mapping ng app
-        'address_country_code': self.address.country_code,  # Required for mapping ng app
-        'geolocation': self.geolocation,
-        'dwellings_number': self.dwellings_number,
-        'housing_tenure': self.housing_tenure,
-        'legal_form': self.legal_form,
-        'source': self.source,
-      }
+    return {
+      'name': self.name,
+      'development_stage': self.development_stage,
+      'completion_year': self.completion_year,
+      'address': self.address,
+      'address_country_code': self.address.country_code,  # Required for mapping ng app
+      'geolocation': self.geolocation,
+      'dwellings_number': self.dwellings_number,
+      'housing_tenure': self.housing_tenure,
+      'legal_form': self.legal_form,
+      'source_id': self.source_id,
+    }
 
   # Save to database
   def add_to_db(self, session):
@@ -176,7 +180,6 @@ class Project:
     dbp.address_line1 = self.address.line1
     dbp.address_region = self.address.region
     dbp.address_code = self.address.code
-    dbp.address_country = self.address.country
     dbp.address_country_code = self.address.country_code
 
     if self.housing_tenure:
@@ -193,6 +196,6 @@ class Project:
         a.legal_form = lf
         dbp.legal_forms.append(a)
 
-    dbp.source = self.source
+    dbp.source_id = self.source_id
 
     session.add(dbp)
