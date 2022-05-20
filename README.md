@@ -83,7 +83,7 @@ The line number of your source minus 1 will be this source's **source_id**.
    
        python converter.py
 
-5. To display the newly imported data on the [webapp](https://github.com/odqo/tudelft-colabresearch-mapping-webapp), you must upload the output files to the [data repository](https://github.com/odqo/tudelft-colabresearch-mapping-data).
+5. To display the newly imported data on the [webapp](https://github.com/odqo/tudelft-colabresearch-mapping-webapp), you must upload the [output files](./data/output/) (all but the `.gitignore`) to the [data repository](https://github.com/odqo/tudelft-colabresearch-mapping-data).
 
 
 ### Import a custom dataset
