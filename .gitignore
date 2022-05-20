@@ -6,5 +6,3 @@ data/output/*.csv
 data/output/*.sqlite3
 data/output/*.json
 data/output/*.xlsx
-
-data/input/normal/*csv
