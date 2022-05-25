@@ -46,14 +46,14 @@ Overview:
 
 How to:
 
-1. In the [sources.csv](./data/input/sources.csv) file add your source on a new line and save your modification (use [VSCode](https://code.visualstudio.com/)).  
+1. In the [sources.csv](./data/input/sources.csv) file add your source on a new line and save your modification (use [Visual Studio Code](https://code.visualstudio.com/)).  
 The line number of your source minus 1 will be this source's **source_id**.
-2. Copy the [country_import_model.csv](./doc/country-normal/country_import_model.csv) to `./data/input/normal` and rename it `source_id.csv` (the *source_id* being the above described number).
+2. Download the [country_import_model.csv](./doc/country-normal/country_import_model.csv).
 3. Import your data to the file:
 
-   1. open the CSV file with Excel;
-   2. paste your data column by column;
-   3. control the syntax and the data.
+   1. Import the CSV file to Excel (choose the `;` delimiter).
+   2. Paste your data column by column.
+   3. Control the syntax and the data.
 
 
    The data of your CSV file must adhere to this structure:
@@ -77,6 +77,10 @@ The line number of your source minus 1 will be this source's **source_id**.
     Syntax of an empty list:
 
         []
+
+    1. Save the file to `./data/input/normal` and name it  `source_id.csv` (the *source_id* being the above described number).
+    2. Open the file in Visual Studio Code and _find-replace_ all the `;` by `|`.
+    3. Save the file
 
    
 4. Run the converter tool:

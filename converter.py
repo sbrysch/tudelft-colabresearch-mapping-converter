@@ -231,7 +231,7 @@ print(f'[Total processed projects from custom sources: {total_projects_custom}]\
 sources = session.query(Source).all()
 for s in sources[len(custom_sources) - 1:]:
   source = session.query(Source).where(Source.id == s.id).first()
-  data = load_source_csv_file(f'./data/input/normal/{s.id}.csv', ',')
+  data = load_source_csv_file(f'./data/input/normal/{s.id}.csv','|')
   projects += process_normal_source(data, source)
 
 total_projects_normal = len(projects) - total_projects_custom
