@@ -55,33 +55,30 @@ The line number of your source minus 1 will be this source's **source_id**.
    2. Paste your data column by column.
    3. Control the syntax and the data.
 
+      The data of your CSV file must adhere to this structure:
 
-   The data of your CSV file must adhere to this structure:
+      | Column            | Type    | Allowed values                                       |
+      |-------------------|---------|------------------------------------------------------|
+      | name              | string  | any                                                  |
+      | development_stage | string  | [list of allowed slugs](./classification/development_stages.csv) |
+      | completion_year   | integer | any                                                  |
+      | dwellings_number  | integer | any                                                  |
+      | address_line1     | string  | any                                                  |
+      | address_region    | string  | any                                                  |
+      | address_code      | string  | any                                                  |
+      | housing_tenure    | list    | [list of allowed slugs](./classification/housing_tenures.csv)    |
+      | legal_form        | list    | [list of allowed slugs](./classification/legal_forms.csv)        |
 
-    | Column            | Type    | Allowed values                                       |
-    |-------------------|---------|------------------------------------------------------|
-    | name              | string  | any                                                  |
-    | development_stage | string  | [list of allowed slugs](./classification/development_stages.csv) |
-    | completion_year   | integer | any                                                  |
-    | dwellings_number  | integer | any                                                  |
-    | address_line1     | string  | any                                                  |
-    | address_region    | string  | any                                                  |
-    | address_code      | string  | any                                                  |
-    | housing_tenure    | list    | [list of allowed slugs](./classification/housing_tenures.csv)    |
-    | legal_form        | list    | [list of allowed slugs](./classification/legal_forms.csv)        |
+      Syntax of a list:
 
-    Syntax of a list:
+          ['element 1', 'element 2']
 
-        ['element 1', 'element 2']
+      Syntax of an empty list:
 
-    Syntax of an empty list:
+          []
 
-        []
-
-    1. Save the file to `./data/input/normal` and name it  `source_id.csv` (the *source_id* being the above described number).
-    2. Open the file in Visual Studio Code and _find-replace_ all the `;` by `|`.
-    3. Save the file
-
+    4. Save the file to `./data/input/normal` and name it  `source_id.csv` (the *source_id* being the above described number).
+    5. Open the file in Visual Studio Code, _find-replace_ all the `;` by `|` and save.
    
 4. Run the converter tool:
    
