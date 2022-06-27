@@ -1,6 +1,6 @@
 date|country_code|name|description|link
-2020-01-01|SW|Database CH Sweden 2020.xlsx|Initial import|
-2019-01-01|DK|Database CH Denmark 2019.xlsx|Initial import|
-2020-11-18|GB|ENGLAND CLT project data-2020-11-18-10-51-57.xlsx|Initial import|
-2022-05-01|NL|Database CPOs NL 220204_Co-Lab Mapping|First normal import|
-2022-06-01|NL|Database gemeenschappelijk wonen NL 220204_Co-Lab Mapping|First normal import|
+2020-01-01|SW|Kollektivhus|Data about cohousing and senior cohousing in Sweden|http://kollektivhus.se/
+2019-01-01|DK|Realdania|Data about senior cohousing in Denmark|https://www.realdania.org/
+2020-11-18|GB|National CLT Network|Data about Community Land Trusts in the UK|https://www.communitylandtrusts.org.uk/
+2019-11-01|NL|Gemeenschappelijk Wonen|data about collaborative housing in the Netherlands|https://www.gemeenschappelijkwonen.nl/
+2022-02-01|NL|BIEB|Data about CPOs in the Netherlands|http://bieb/
