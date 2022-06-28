@@ -150,6 +150,7 @@ class Source(Base):
     return {
       'id': self.id,
       'name': self.name,
+      'date': self.date.strftime('%Y-%m-%d'),
       'description': self.description,
       'link': self.link,
     }
