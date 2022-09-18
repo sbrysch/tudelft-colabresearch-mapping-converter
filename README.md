@@ -13,8 +13,8 @@ The converted data can then be displayed by the [mapping webapp](https://mapping
 
 ## Links
 
-- [Mapping data](https://github.com/odqo/tudelft-colabresearch-mapping-data)
-- [Mapping webapp](https://github.com/odqo/tudelft-colabresearch-mapping-webapp)
+- [Mapping data repository](https://github.com/odqo/tudelft-colabresearch-mapping-data)
+- [Mapping webapp repository](https://github.com/odqo/tudelft-colabresearch-mapping-webapp)
 
 
 
