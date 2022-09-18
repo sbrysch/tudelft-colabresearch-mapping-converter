@@ -9,23 +9,31 @@ The converted data can then be displayed by the [mapping webapp](https://mapping
 
 ![How it works schema](doc/tudelft-colabresearch-mapping.png)
 
+Overview:
+- You must copy the converter to your computer in order to run it.
+- To modify any information that will be displayed (data or even classification) in the [webapp](https://mapping.co-lab-research.net/), you have to edit the appropriate CSV files before running the converter and exporting the output.
+- After you run the converter, you have to put the output data into the [data repository](https://github.com/odqo/tudelft-colabresearch-mapping-data) in order for the [mapping webapp](https://mapping.co-lab-research.net/) to display it.
+
 
 
 ## Links
 
 - [Mapping data repository](https://github.com/odqo/tudelft-colabresearch-mapping-data)
 - [Mapping webapp repository](https://github.com/odqo/tudelft-colabresearch-mapping-webapp)
+- [Mapping webapp](https://mapping.co-lab-research.net/).
 
 
 
-## Requirements
+## Setup
+
+
+### Requirements
 
 - [Python 3.9.x](https://www.python.org/)
 - [pip](https://pypi.org/project/pip/)
 
 
-
-## Initialization
+### Initialization
 
 Install the dependencies:
 
@@ -34,6 +42,15 @@ Install the dependencies:
 
 
 ## Usage
+
+The most common usage consists in importing a new dataset, running the converter and putting the generated data into the [data repository](https://github.com/odqo/tudelft-colabresearch-mapping-data).
+
+The converter also allows to edit former datasets, remove some of them and even edit the classification: in each case the updated data will appear in the webapp only after you push the latest output to the data repository.
+
+
+### Modify the classification
+
+You can change some aspects of the classification by editing the relevant files in the [classification folder](https://github.com/odqo/tudelft-colabresearch-mapping-converter/tree/main/classification).
 
 
 ### Import a dataset
