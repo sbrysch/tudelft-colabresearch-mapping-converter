@@ -57,7 +57,7 @@ You can change some aspects of the classification by editing the relevant files 
 
 Overview:
 
-- You must provide one project listing file per source per country.
+- You must provide one projects-listing file per source per country.
 - Multiple sources per country are allowed and not all countries must have a source.
 - Each source file must be correctly formatted for the import script to succeed.
 
